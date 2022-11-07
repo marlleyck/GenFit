@@ -1,7 +1,9 @@
 import { FormLogin } from '../../components/FormLogin';
+import { ChooseAvatar } from '../../components/ChooseAvatar';
 
 import { Container, ImageWeight, Title } from './styles';
 import { ImageBackground, Keyboard } from 'react-native';
+
 
 export const CreateProfile = () => {
     const gradient = require('../../../assets/imgs/Gradient.png')
@@ -26,6 +28,7 @@ export const CreateProfile = () => {
             </Title>
 
             <FormLogin />
+            <ChooseAvatar />
             </ImageBackground>
         </Container>
     );
