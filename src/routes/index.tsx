@@ -3,6 +3,7 @@ import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Welcome } from "../screens/Welcome";
+import { CreateProfile } from "../screens/CreateProfile";
 import { Home } from "../screens/Home";
 
 import { PropsNavigationStack } from "./Models";
@@ -22,6 +23,10 @@ export default function Routes() {
             <Stack.Screen
             name="Home"
             component={Home} />
+
+            <Stack.Screen
+            name="CreateProfile"
+            component={CreateProfile} />
         </Stack.Navigator>
     );
 }
