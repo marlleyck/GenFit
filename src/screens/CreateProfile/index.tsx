@@ -1,19 +1,20 @@
 import { FormLogin } from '../../components/FormLogin';
 
 import { Container, ImageWeight, Title } from './styles';
-import { ImageBackground } from 'react-native';
+import { ImageBackground, Keyboard } from 'react-native';
 
 export const CreateProfile = () => {
     const gradient = require('../../../assets/imgs/Gradient.png')
     const weight = require('../../../assets/imgs/weight.png')
 
     return (
-        <Container>
+        <Container
+        onPress={() => Keyboard.dismiss()}>
             <ImageBackground
             style={{
-                flex: 1, 
+                flex: 1,
                 justifyContent: 'flex-start', 
-                alignItems: 'center' 
+                alignItems: 'center'
             }}
             source={gradient}>
                 <ImageWeight
