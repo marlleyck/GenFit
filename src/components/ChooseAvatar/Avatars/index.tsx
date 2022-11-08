@@ -58,8 +58,8 @@ export const Avatars = () => {
     return (
         <FlatList
             data={avatarList}
-            renderItem={({ item }: { item: AvatarType }) => <Avatar item={item.url} /> } 
-            keyExctrator={({ item }: {item: AvatarType}) => item.id}
+            renderItem={({ item }: { item: any }) => <Avatar item={item.url} /> } 
+            keyExtractor={(item, index) => index}
         />
     );
 }
