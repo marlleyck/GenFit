@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Modal } from "react-native";
 
+import { Avatars } from "./Avatars";
 import { ChooseAvatarButton } from "./ChooseAvatarButton";
 
-import { Container, Image } from "./styles";
+import { Container, Image, ContainerModal, ContentModal } from "./styles";
 
 export const ChooseAvatar = () => {
     const [modalVisible, setModalVisible] = useState(false)
@@ -12,13 +13,17 @@ export const ChooseAvatar = () => {
     return (
         <Container>
             <Modal
-            animationType="slide"
-            transparent={false}
+            animationType="fade"
+            transparent={true}
             visible={modalVisible}
             onRequestClose={() => {
                 setModalVisible(!modalVisible)
             }}>
-
+                <ContainerModal>
+                    <ContentModal>
+                        <Avatars />
+                    </ContentModal>
+                </ContainerModal>
             </Modal>
             <Image source={avatar} />
             <ChooseAvatarButton
