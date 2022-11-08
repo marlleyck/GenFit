@@ -1,8 +1,16 @@
 import { Container, Title } from "./styles";
 
-export const ChooseAvatarButton = () => {
+type ChooseAvatarButtonProps = {
+    setModalVisible: (newState: boolean) => void;
+}
+
+export const ChooseAvatarButton = ({ setModalVisible }: ChooseAvatarButtonProps) => {
+    const handlePressAvatar = () => {
+        setModalVisible(true)
+    }
     return (
-        <Container>
+        <Container
+        onPress={handlePressAvatar}>
             <Title>Escolha seu avatar</Title>
         </Container>
     );
