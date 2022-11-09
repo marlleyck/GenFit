@@ -10,6 +10,11 @@ export const ChooseAvatar = () => {
     const [modalVisible, setModalVisible] = useState(false)
 
     const avatar = require('../../../assets/imgs/avatars/female1.png')
+
+    const handlePressOutModal = () => {
+        setModalVisible(false)
+    }
+
     return (
         <Container>
             <Modal
@@ -19,9 +24,10 @@ export const ChooseAvatar = () => {
             onRequestClose={() => {
                 setModalVisible(!modalVisible)
             }}>
-                <ContainerModal>
+                <ContainerModal
+                onPress={handlePressOutModal}>
                     <ContentModal>
-                        <Avatars />
+                        <Avatars setModalVisible={setModalVisible} />
                     </ContentModal>
                 </ContainerModal>
             </Modal>

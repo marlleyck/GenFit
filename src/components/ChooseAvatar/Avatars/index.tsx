@@ -1,12 +1,15 @@
-import { ListRenderItem } from 'react-native';
 import { Avatar } from '../Avatar';
+import { HeaderAvatars } from './HeaderAvatars';
 
 import { AvatarType } from '../../../@types/AvatarType';
 
 import { FlatList } from './styles';
 
+type AvatarsProps = {
+    setModalVisible: (newState: boolean) => void;
+}
 
-export const Avatars = () => {
+export const Avatars = ({ setModalVisible }: AvatarsProps) => {
     const avatarList: AvatarType[] = [
         {
             id: 1,
@@ -58,6 +61,7 @@ export const Avatars = () => {
 
     return (
         <FlatList
+            ListHeaderComponent={ <HeaderAvatars setModalVisible={setModalVisible} /> }
             data={avatarList}
             keyExtractor={( item, index ) => String(index)}
             renderItem={({ item }: { item: any }) => <Avatar url={item.url} />}

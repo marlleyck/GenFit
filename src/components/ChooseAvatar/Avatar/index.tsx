@@ -1,7 +1,7 @@
 import { Container, Image } from './styles';
 
 type AvatarProps = {
-    url: any;
+    url: number;
 }
 
 export const Avatar = ({ url }: AvatarProps) => {
