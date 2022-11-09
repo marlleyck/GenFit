@@ -7,9 +7,10 @@ import { FlatList } from './styles';
 
 type AvatarsProps = {
     setModalVisible: (newState: boolean) => void;
+    setAvatar: (newState: any) => void;
 }
 
-export const Avatars = ({ setModalVisible }: AvatarsProps) => {
+export const Avatars = ({ setModalVisible, setAvatar }: AvatarsProps) => {
     const avatarList: AvatarType[] = [
         {
             id: 1,
@@ -64,7 +65,11 @@ export const Avatars = ({ setModalVisible }: AvatarsProps) => {
             ListHeaderComponent={ <HeaderAvatars setModalVisible={setModalVisible} /> }
             data={avatarList}
             keyExtractor={( item, index ) => String(index)}
-            renderItem={({ item }: { item: any }) => <Avatar url={item.url} />}
+            renderItem={({ item }: { item: any }) => 
+            <Avatar 
+            item={item} 
+            setAvatar={setAvatar}
+            setModalVisible={setModalVisible} />}
         />
     );
 }

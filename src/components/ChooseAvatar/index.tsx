@@ -8,8 +8,7 @@ import { Container, Image, ContainerModal, ContentModal } from "./styles";
 
 export const ChooseAvatar = () => {
     const [modalVisible, setModalVisible] = useState(false)
-
-    const avatar = require('../../../assets/imgs/avatars/female1.png')
+    const [avatar, setAvatar] = useState(require('../../../assets/imgs/avatars/female1.png'))
 
     const handlePressOutModal = () => {
         setModalVisible(false)
@@ -27,11 +26,12 @@ export const ChooseAvatar = () => {
                 <ContainerModal
                 onPress={handlePressOutModal}>
                     <ContentModal>
-                        <Avatars setModalVisible={setModalVisible} />
+                        <Avatars setModalVisible={setModalVisible} setAvatar={setAvatar} />
                     </ContentModal>
                 </ContainerModal>
             </Modal>
             <Image source={avatar} />
+
             <ChooseAvatarButton
             setModalVisible={setModalVisible}  />
         </Container>
