@@ -1,3 +1,4 @@
+import { ListRenderItem } from 'react-native';
 import { Avatar } from '../Avatar';
 
 import { AvatarType } from '../../../@types/AvatarType';
@@ -6,7 +7,7 @@ import { FlatList } from './styles';
 
 
 export const Avatars = () => {
-    const avatarList: any = [
+    const avatarList: AvatarType[] = [
         {
             id: 1,
             name: "Female1",
@@ -58,8 +59,8 @@ export const Avatars = () => {
     return (
         <FlatList
             data={avatarList}
-            renderItem={({ item }: { item: any }) => <Avatar item={item.url} /> } 
-            keyExtractor={(item, index) => index}
+            keyExtractor={( item, index ) => String(index)}
+            renderItem={({ item }: { item: any }) => <Avatar url={item.url} />}
         />
     );
 }

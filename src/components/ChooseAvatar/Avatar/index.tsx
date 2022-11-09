@@ -1,13 +1,13 @@
 import { Container, Image } from './styles';
 
 type AvatarProps = {
-    item: any;
+    url: any;
 }
 
-export const Avatar = ({ item }: AvatarProps) => {
+export const Avatar = ({ url }: AvatarProps) => {
     return (
         <Container>
-            <Image source={item} />
+            <Image source={url} />
         </Container>
     );
 }
