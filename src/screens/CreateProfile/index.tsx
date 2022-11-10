@@ -1,13 +1,17 @@
+import { ImageBackground, Keyboard } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { FormLogin } from '../../components/FormLogin';
 import { ChooseAvatar } from '../../components/ChooseAvatar';
 
-import { Container, ImageWeight, Title } from './styles';
-import { ImageBackground, Keyboard } from 'react-native';
+import { PropsStack } from '../../routes/Models';
+
+import { Container, ImageWeight, Title, Button, ButtonTitle } from './styles';
 
 
 export const CreateProfile = () => {
     const gradient = require('../../../assets/imgs/Gradient.png')
     const weight = require('../../../assets/imgs/weight.png')
+    const navigation = useNavigation<PropsStack>()
 
     return (
         <Container
@@ -29,6 +33,11 @@ export const CreateProfile = () => {
 
             <FormLogin />
             <ChooseAvatar />
+
+            <Button
+                onPress={() => { navigation.navigate('Home') }}>
+                <ButtonTitle>Feito!</ButtonTitle>
+            </Button>
             </ImageBackground>
         </Container>
     );

@@ -1,11 +1,10 @@
+import { ImageBackground } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import { useNavigation } from '@react-navigation/native';
 
 import { PropsStack } from '../../routes/Models';
 
 import { Container, Men, ContentTitles, Title, Subtitle, Button, ButtonTitle } from "./styles";
-import { ImageBackground } from "react-native";
-import { StatusBar } from "expo-status-bar";
-
 
 export const Welcome = () => {
     const gradient = require('../../../assets/imgs/Gradient.png')
@@ -35,7 +34,7 @@ export const Welcome = () => {
             </ContentTitles>
 
             <Button
-            onPress={() => { navigation.navigate('CreateProfile') }}>
+                onPress={() => { navigation.navigate('CreateProfile') }}>
                 <ButtonTitle>Vamos lá!</ButtonTitle>
             </Button>
             </ImageBackground>

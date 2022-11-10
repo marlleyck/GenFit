@@ -15,3 +15,20 @@ export const Title = styled.Text`
     margin-top: -80px;
 `
 
+export const Button = styled.TouchableOpacity`
+    width: 220px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15px;
+    border-radius: 25px;
+
+    background-color: ${THEME.COLORS.BLUE_10};
+`
+
+export const ButtonTitle = styled.Text`
+    font-family: ${THEME.FONTS.Roboto_700Bold};
+    font-size: 28px;
+    color: white;
+`
