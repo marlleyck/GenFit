@@ -1,4 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
+import { AppContextProvider } from "./src/contexts/AppContext";
 import Routes from "./src/routes";
 
 import { useFonts, Roboto_300Light, Roboto_700Bold } from '@expo-google-fonts/roboto';
@@ -15,7 +16,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Routes />
+      <AppContextProvider>
+        <Routes />
+      </AppContextProvider>
     </NavigationContainer>
   );
 }
