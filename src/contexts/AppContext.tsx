@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState, useEffect } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Toast } from "react-native-toast-message/lib/src/Toast";
 
@@ -13,7 +13,7 @@ type AppContextType = {
     setNameUser: (newState: string) => void;
     emailUser: string;
     setEmailUser: (newState: string) => void;
-    getInfosUser: () => void;
+    getInfosUser: () => Promise<string | undefined | null>;
     setInfosUser: (infosUser: UserType) => void;
 }
 
@@ -26,7 +26,7 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
     const getInfosUser = async () => {
         try {
             const infosUser = await AsyncStorage.getItem('@genfit:InfosUser')
-            console.log(infosUser)
+            return infosUser
             
         } catch(e) {
             console.log(e)
