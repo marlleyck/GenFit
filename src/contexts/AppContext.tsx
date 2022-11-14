@@ -84,10 +84,11 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
     useEffect(() => {
         const fetchUser = async () => {
             try {
+                // await AsyncStorage.removeItem('@genfit:InfosUser')
                 const userRequest = await AsyncStorage.getItem('@genfit:InfosUser')
                 setDataIsArrived(true)
                 setUserData(JSON.parse(userRequest!))
-                console.log(userRequest)
+                // console.log(userRequest)
     
                 setNameUser(userData?.name)
                 setEmailUser(userData?.email)

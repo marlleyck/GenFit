@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Text } from 'react-native';
+import { AvatarType } from '../../@types/AvatarType';
 import { AppContext } from '../../contexts/AppContext';
 import { Container, Image } from './styles';
 
@@ -8,17 +9,17 @@ export const HomeHeader = () => {
     const [avatarUrl, setAvatarUrl] = useState<any>()
 
     useEffect(() => {
-        let avatarUrlData
-        if (userData) {
-            avatarUrlData = avatarList.filter(
-                (item) => item.id == userData.avatarId
-            )
+        if (userData !== null) {
+            let avatarUrlData: AvatarType[] | null = []
+            if (userData) {
+                avatarUrlData = avatarList.filter(
+                    (item) => item.id == userData.avatarId
+                )
+            }
+            setAvatarUrl(avatarUrlData)
+            setAvatar(avatarUrlData[0].url) 
         }
-        setAvatarUrl(avatarUrlData)
-        setAvatar(avatarUrlData[0].url)
-
-        
-    }, [])
+    }, [dataIsArrived])
 
     return (
         <>
