@@ -7,7 +7,7 @@ import { PropsStack } from '../../routes/Models';
 import { Container, Men, ContentTitles, Title, Subtitle, Button, ButtonTitle } from "./styles";
 
 export const Welcome = () => {
-    const gradient = require('../../../assets/imgs/Gradient.png')
+    const Gradient = require('../../../assets/imgs/Gradient.png')
     const men = require('../../../assets/imgs/men.png')
     const navigation = useNavigation<PropsStack>()
 
@@ -19,7 +19,7 @@ export const Welcome = () => {
                 justifyContent: 'flex-start', 
                 alignItems: 'center' 
             }}
-            source={gradient}>
+            source={Gradient}>
                 <Men
                 source={men} />
 
@@ -39,7 +39,7 @@ export const Welcome = () => {
             </Button>
             </ImageBackground>
 
-            <StatusBar style="auto" backgroundColor="white" />
+            <StatusBar style="dark" backgroundColor="white" />
         </Container>
     );
 }

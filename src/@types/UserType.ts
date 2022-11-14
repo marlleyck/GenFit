@@ -1,5 +1,7 @@
 export type UserType = {
-    id: string;
-    name: string;
-    email: string;
+    id: number | undefined;
+    name: string | undefined;
+    email: string | undefined;
+    avatarUrl: any;
+    avatarId: number;
 }

@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Modal } from "react-native";
+import { AppContext } from "../../contexts/AppContext";
 
 import { Avatars } from "./Avatars";
 import { ChooseAvatarButton } from "./ChooseAvatarButton";
 
 import { Container, Image, ContainerModal, ContentModal } from "./styles";
 
-export const ChooseAvatar = () => {
+type ChooseAvatarProps = {
+    setAvatarId: (newState: number) => void;
+}
+
+export const ChooseAvatar = ({ setAvatarId }: ChooseAvatarProps) => {
     const [modalVisible, setModalVisible] = useState(false)
-    const [avatar, setAvatar] = useState(require('../../../assets/imgs/avatars/female1.png'))
+    const { avatar, setAvatar } = useContext(AppContext)
 
     const handlePressOutModal = () => {
         setModalVisible(false)
@@ -26,7 +31,10 @@ export const ChooseAvatar = () => {
                 <ContainerModal
                 onPress={handlePressOutModal}>
                     <ContentModal>
-                        <Avatars setModalVisible={setModalVisible} setAvatar={setAvatar} />
+                        <Avatars 
+                        setModalVisible={setModalVisible} 
+                        setAvatar={setAvatar}
+                        setAvatarId={setAvatarId} />
                     </ContentModal>
                 </ContainerModal>
             </Modal>

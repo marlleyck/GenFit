@@ -16,7 +16,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     const [signIn, setSignIn] = useState<boolean | undefined>(undefined)
     const isSignIn = async () => {
         const user = await AsyncStorage.getItem('@genfit:InfosUser')
-        console.log(user)
+        // console.log(user)
         if (user === null) {
             setSignIn(false)
         } else if (user !== null && user !== undefined) {

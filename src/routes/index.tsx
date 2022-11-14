@@ -14,43 +14,40 @@ import { PropsNavigationStack } from "./Models";
 const Stack = createNativeStackNavigator<PropsNavigationStack>()
 
 export default function Routes() {
-    const { signIn, setSignIn } = useContext(AuthContext)
-
-    const handleTest = () => {
-    }
+    const { signIn } = useContext(AuthContext)
 
     return (
         <>
-        { signIn === undefined 
-        ? <ActivityIndicator /> 
-        : 
-            <>
-            {signIn
-            ? <Stack.Navigator
-                screenOptions={{
-                headerShown: false
-                }}>
-                    <Stack.Screen
-                    name="Home"
-                    component={Home} />
-              </Stack.Navigator>
-              : <Stack.Navigator
-                screenOptions={{
-                headerShown: false
-                }}>
-                    <Stack.Screen
-                    name="Welcome"
-                    component={Welcome} />
-            
-                    <Stack.Screen
-                    name="CreateProfile"
-                    component={CreateProfile} />
-                    <Stack.Screen
-                    name="Home"
-                    component={Home} />
-                </Stack.Navigator>}
-            </>
-        }
+            { signIn === undefined 
+            ? <ActivityIndicator /> 
+            : 
+                <>
+                {signIn
+                ? <Stack.Navigator
+                    screenOptions={{
+                    headerShown: false
+                    }}>
+                        <Stack.Screen
+                        name="Home"
+                        component={Home} />
+                </Stack.Navigator>
+                : <Stack.Navigator
+                    screenOptions={{
+                    headerShown: false
+                    }}>
+                        <Stack.Screen
+                        name="Welcome"
+                        component={Welcome} />
+                
+                        <Stack.Screen
+                        name="CreateProfile"
+                        component={CreateProfile} />
+                        <Stack.Screen
+                        name="Home"
+                        component={Home} />
+                    </Stack.Navigator>}
+                </>
+            }
         </>
     );
 }
