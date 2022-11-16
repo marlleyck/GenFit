@@ -1,14 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground } from "react-native";
+import { ImageBackground, Keyboard } from "react-native";
 
 import { HomeHeader } from '../../components/HomeHeader';
+import { HomeMain } from '../../components/HomeMain';
 
-import { Container, Title } from './styles';
+import { Container } from './styles';
 
 export const Home = () => {
     const Gradient_Home = require('../../../assets/imgs/Gradient-Home.png') 
     return (
-        <Container>
+        <Container
+        onPress={() => Keyboard.dismiss()}>
             <ImageBackground
             style={{
                 flex: 1, 
@@ -17,7 +19,7 @@ export const Home = () => {
             }}
             source={Gradient_Home}>
                 <HomeHeader />
-                <Title>Home!</Title>
+                <HomeMain />
             </ImageBackground>
             <StatusBar style="dark" backgroundColor="white" />
         </Container>

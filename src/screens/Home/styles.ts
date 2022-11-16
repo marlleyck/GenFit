@@ -1,10 +1,7 @@
 import styled from "styled-components/native";
+import { THEME } from "../../THEME";
 
-export const Container = styled.View`
+export const Container = styled.Pressable`
     flex: 1;
     padding-top: 30px;
-`
-
-export const Title = styled.Text`
-    color: black;
 `
