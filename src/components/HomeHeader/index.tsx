@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import { Text } from 'react-native';
 import { AvatarType } from '../../@types/AvatarType';
 import { AppContext } from '../../contexts/AppContext';
-import { Container, Image } from './styles';
+
+import { Container, Image, ContentTouchable, Name } from './styles';
 
 export const HomeHeader = () => {
     const { userData, avatar, dataIsArrived, avatarList, setAvatar } = useContext(AppContext)
@@ -25,8 +25,10 @@ export const HomeHeader = () => {
         <>
         {dataIsArrived ?
             <Container>
-                <Image source={avatar} />
-                <Text>{avatar}</Text> 
+                <Name>{userData?.name}</Name>
+                <ContentTouchable>
+                    <Image source={avatar} />
+                </ContentTouchable>
             </Container>
         : null}
         </>

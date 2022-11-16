@@ -37,8 +37,7 @@ export const CreateProfile = () => {
         }
 
         setInfosUser(newData)
-        // getInfosUser()
-
+        
         navigation.navigate('Home')
     }
 
