@@ -14,6 +14,7 @@ export const Input = styled.TextInput`
     padding: 10px 10px 10px 50px;
     border-radius: 15px;
     background-color: white;
+    /* box-shadow: 4px 5px 15px black; */
 `
 
 export const Content = styled.View`

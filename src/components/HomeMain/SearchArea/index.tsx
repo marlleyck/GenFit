@@ -13,7 +13,6 @@ export const SearchArea = () => {
                 <Input
                 placeholder="Search" />
             </Content>
-            
         </Container>
     );
 }

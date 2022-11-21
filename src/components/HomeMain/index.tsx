@@ -1,4 +1,5 @@
 import { SearchArea } from "./SearchArea";
+import { TrainingArea } from "./TrainingArea";
 
 import { Container, Title } from "./styles";
 
@@ -7,6 +8,7 @@ export const HomeMain = () => {
         <Container>
             <Title>Treinos</Title>
             <SearchArea />
+            <TrainingArea />
         </Container>
     );
 }
