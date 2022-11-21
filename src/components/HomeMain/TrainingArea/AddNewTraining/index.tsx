@@ -30,8 +30,8 @@ export const AddNewTraining = () => {
                                 size={30} 
                                 color="black" />
                             </HeaderContent>
-                            
                         </HeaderModal>
+                        
                         <AddNewTrainingPage />
                     </ContentModal>
                 </ContainerModal>

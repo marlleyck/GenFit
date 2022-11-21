@@ -4,6 +4,7 @@ import { AppContextProvider } from "./src/contexts/AppContext";
 import Routes from "./src/routes";
 
 import { useFonts, Roboto_300Light, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { TrainingContextProvider } from "./src/contexts/TrainingContext";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,7 +20,9 @@ export default function App() {
     <NavigationContainer>
       <AuthContextProvider>
         <AppContextProvider>
-          <Routes />
+          <TrainingContextProvider>
+            <Routes />
+          </TrainingContextProvider>
         </AppContextProvider>
       </AuthContextProvider>
     </NavigationContainer>
