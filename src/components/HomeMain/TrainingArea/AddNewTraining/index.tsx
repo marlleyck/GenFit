@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 export const AddNewTraining = () => {
-    const [modalVisible, setModalVisible] = useState(true)
+    const [modalVisible, setModalVisible] = useState(false)
     return (
         <Container>
             <Modal

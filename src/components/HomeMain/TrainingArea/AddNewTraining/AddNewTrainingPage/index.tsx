@@ -1,17 +1,24 @@
 import { useState } from "react";
-import { Container, Input, ContentLabel, TitleInput } from "./styles";
+
+import { AntDesign } from '@expo/vector-icons'; 
+import { Container, Input, Content, ContentTouch, TitleInput } from "./styles";
 
 export const AddNewTrainingPage = () => {
     const [trainingText, setTrainingText] = useState('Novo treino')
 
     return (
         <Container>
-            <ContentLabel>
-                {/* <TitleInput>Novo treino</TitleInput> */}
+            <Content>
                 <Input
                 value={trainingText}
                 onChangeText={(text) => setTrainingText(text)} />
-            </ContentLabel>
+            </Content>
+
+            <Content>
+                <ContentTouch>
+                    <AntDesign name="pluscircle" size={40} color="black" />
+                </ContentTouch>
+            </Content>
         </Container>
     );
 }

@@ -6,10 +6,12 @@ export const Container = styled.View`
     height: 100%;
 `
 
-export const ContentLabel = styled.View`
+export const Content = styled.View`
     width: 100%;
     align-items: center;
 `
+
+export const ContentTouch = styled.TouchableOpacity``
 
 export const TitleInput = styled.Text`
     font-family: ${THEME.FONTS.Roboto_300Light};
@@ -26,6 +28,8 @@ export const Input = styled.TextInput`
     color: black;
 
     padding: 8px;
+    margin-bottom: 10px;
+
     border: 0.4px solid gray;
     border-radius: 8px;
     background-color: transparent;
